@@ -1,6 +1,12 @@
 from ipalib.output import result
 from pycparser.c_ast import While
+from wx.lib.pydocview import Print
 
+
+#Даны два целых числа: A, B. Проверить истинность высказывания: «Хотя бы одно
+#из чисел A и B четное»
+
+#Вывод с проверкой
 while True:
     try:
         a = int(input("Введие a: "))
@@ -9,10 +15,11 @@ while True:
     except ValueError:
         print("Ошибка: нужно ввести целок число")
 
-
-if a > b:
-    result = a**2 + b**2
+#Проверка высказывания
+if a % 2 == 0 or b % 2 == 0:
+    print("Высказывание истинно: хотя бы одно число четное")
 else:
-    result = b - a
+    print("Высказывание истинно: ни одно из числе не четное")
 
+result = a % 2 == 0 or b % 2 == 0
 print("Результат:", result )
